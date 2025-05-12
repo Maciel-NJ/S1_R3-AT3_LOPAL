@@ -1,19 +1,24 @@
-// Pede dois números ao usuário
-let num1 = parseInt(prompt("Digite o primeiro número:"));
-let num2 = parseInt(prompt("Digite o segundo número:"));
+// solicita os dois números à pessoa
+let numero1 = parseInt(prompt("Digite o primeiro número:"));
+let numero2 = parseInt(prompt("Digite o segundo número:"));
 
-// Garante que num1 seja o menor e num2 o maior
-let inicio = Math.min(num1, num2);
-let fim = Math.max(num1, num2);
+// define o início e fim deacordo na ordem dos números digitados
+let inicio;
+let fim;
 
-let pares = "Números pares entre " + inicio + " e " + fim + ":\n";
-
-// Percorre o intervalo e pega apenas os pares
-for (let i = inicio; i <= fim; i++) {
-  if (i % 2 === 0) {
-    pares += i + "\n";
-  }
+if (numero1 < numero2) {
+  inicio = numero1;
+  fim = numero2;
+} else {
+  inicio = numero2;
+  fim = numero1;
 }
 
-// Mostra o resultado com alert
-alert(pares);
+// vai mostrar os números pares entre os dois valores
+console.log("Números pares entre " + inicio + " e " + fim + ":");
+
+for (let i = inicio; i <= fim; i++) {
+  if (i % 2 === 0) {
+    console.log(i);
+  }
+}
